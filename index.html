@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="PublicBounty: The Screenless Autumn Urban Foraging Agent powered by Mastra, Gemma 2, and municipal tree census data." />
+    <title>PublicBounty • Screenless Autumn Urban Foraging Agent</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- App Header -->
+      <header class="app-header">
+        <div class="badge-tagline">
+          <span class="pulse-dot"></span>
+          <span>Screenless Harvest • Powered by Mastra Agent + Gemma 2 (2B)</span>
+        </div>
+        <h1 class="main-title">PublicBounty</h1>
+        <p class="subtitle">
+          Turn ripe municipal sidewalk fruit into dinner. Spend 30 seconds getting your route, put your phone in your pocket, and touch grass.
+        </p>
+      </header>
+
+      <!-- Main Container -->
+      <main class="container">
+        <!-- Control Bar -->
+        <section class="control-bar">
+          <div class="city-select-group">
+            <label for="city-selector">📍 Select Neighborhood:</label>
+            <select id="city-selector" class="select-city">
+              <option value="sf" selected>San Francisco (Mission & Bernal Heights)</option>
+              <option value="portland">Portland (Ladd’s Addition & Hawthorne)</option>
+              <option value="austin">Austin (Zilker & East Austin)</option>
+              <option value="nyc">Brooklyn (Park Slope & Prospect Park)</option>
+              <option value="london">London (Hackney & Victoria Park)</option>
+            </select>
+          </div>
+
+          <button class="btn-generate-route" id="btn-generate-route">
+            🧺 <span>Plan 20-Min Harvest Route</span>
+          </button>
+        </section>
+
+        <!-- Mission Hero Banner -->
+        <section class="mission-hero-banner" id="mission-hero-banner">
+          <div class="hero-stats-group">
+            <div class="hero-stat-badge">
+              <span class="stat-label">Estimated Sidewalk Yield</span>
+              <span class="stat-val" id="stat-yield">14 kg</span>
+            </div>
+            <div class="hero-stat-badge">
+              <span class="stat-label">Outdoor Walking Loop</span>
+              <span class="stat-val" id="stat-walking">18 mins</span>
+            </div>
+            <div class="hero-stat-badge">
+              <span class="stat-label">Botanical Safety Status</span>
+              <span class="stat-val" id="stat-safety" style="color: #15803D;">100% Gemma Verified</span>
+            </div>
+          </div>
+
+          <div class="action-buttons-group">
+            <button class="btn-pill-action" id="btn-print-pocket">
+              🖨️ <span>Print 3x5 Pocket Card</span>
+            </button>
+            <button class="btn-pill-action" id="btn-audio-beacon">
+              🔊 <span id="audio-beacon-label">Pocket Audio Guide</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Interactive Harvest Map -->
+        <section class="map-card-wrapper">
+          <div class="map-header">
+            <h3>🗺️ Autumn Foraging Walking Loop (Municipal Tree Census Overlay)</h3>
+            <span style="font-size: 0.85rem; color: #526356; font-weight: 600;">Data: OpenStreetMap natural=tree & City Data</span>
+          </div>
+          <div id="leaflet-map-container"></div>
+        </section>
+
+        <!-- Pocket Harvest Card (The Screenless Artifact) -->
+        <section id="pocket-card-mount"></section>
+      </main>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
