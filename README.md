@@ -28,7 +28,10 @@ The Week 1 prompt challenged builders to:
 
 ---
 
-## 📸 Screenshots
+## 📸 Interactive Demo Video & Screenshots
+
+### 📹 Full Automated Demo Walkthrough
+![PublicBounty Demo Video Walkthrough](docs/screenshots/public_bounty_demo.webp)
 
 | 1. Mastra Harvest Loop & OpenStreetMap View | 2. Screenless 3x5 Printable Pocket Card |
 | :---: | :---: |
